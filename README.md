@@ -85,3 +85,11 @@ The following service integrations are supported by Azure Functions:
 <li>On-premises (using Service Bus)
 <li>Twilio (SMS messages)
 </ul>
+
+Source: https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
+
+Other useful links:
+
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node
+
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-table
