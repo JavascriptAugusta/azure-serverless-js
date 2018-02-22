@@ -1,0 +1,34 @@
+var https = require('https');
+
+module.exports = function (context, myTimer) {
+    //get a random number
+    var rand = Math.floor(Math.random() * 8);
+    //call SWAPI films API with random number
+    https.get("https://swapi.co/api/films/" + rand +"/", (resp) => {
+            let data = '';
+ 
+            // A chunk of data has been recieved.
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+ 
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+                var myObj = JSON.parse(data);
+                context.log(myObj.title);
+                context.log(myObj.opening_crawl);          
+            });
+        }).on("error", (err) => {
+            context.log("Error: " + err.message);
+        });
+
+    var timeStamp = new Date().toISOString();
+    
+    if(myTimer.isPastDue)
+    {
+        context.log('JavaScript is running late!');
+    }
+    context.log('JavaScript timer trigger function ran!', timeStamp);   
+    
+    context.done();
+};
