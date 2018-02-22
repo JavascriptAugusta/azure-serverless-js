@@ -90,6 +90,8 @@ Source: https://docs.microsoft.com/en-us/azure/azure-functions/functions-overvie
 
 Other useful links:
 
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference
+
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node
 
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-table
