@@ -1,0 +1,17 @@
+//This is an example to get comment data from GitHub and output the comment to Azure Table Storage
+
+// Please visit http://go.microsoft.com/fwlink/?LinkID=761099&clcid=0x409 for more information on settting up Github Webhooks
+module.exports = function (context, data) {
+    context.log('GitHub Webhook triggered!', data.comment.body);
+    //context.res = { body: 'New GitHub comment: ' + data.comment.body };
+
+    var i = Math.random().toString(36).substring(2, 15);
+
+    context.bindings.comment = {
+        PartitionKey: "Test",
+        RowKey: i.toString(),
+        Text : data.comment.body 
+    }
+
+    context.done();
+};
